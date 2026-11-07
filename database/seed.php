@@ -1,7 +1,7 @@
 <?php
 // database/seed.php
 $host = getenv('DB_HOST') ?: 'localhost';
-$db_name = getenv('DB_NAME') ?: 'dental_care_db';
+$db_name = getenv('DB_NAME') ?: 'johnwincellopez_schooldental';
 $username = getenv('DB_USER') ?: 'root';
 $password = getenv('DB_PASSWORD') ?: '';
 

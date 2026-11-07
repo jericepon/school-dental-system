@@ -11,7 +11,8 @@ A lightweight PHP & MySQL web application designed for campus dental clinics to 
 4. [Step-by-Step Installation Guide](#-step-by-step-installation-guide)
 5. [Default Test Accounts](#-default-test-accounts)
 6. [How to Use the System](#-how-to-use-the-system)
-7. [Troubleshooting](#-troubleshooting)
+7. [User Manual](#-user-manual)
+8. [Troubleshooting](#-troubleshooting)
 
 ---
 
@@ -117,8 +118,8 @@ Instead of importing `.sql` files manually in `phpMyAdmin`, use the built-in set
 
 ## 📌 Database Name Requirement
 
-* **Database Name:** `dental_care_db`
-> **Note for Students:** The included `database/migrate.php` script will **automatically create** the `dental_care_db` database for you! However, if you prefer creating it manually in **phpMyAdmin**, make sure to name it `dental_care_db`.
+* **Database Name:** `johnwincellopez_schooldental`
+> **Note for Students:** The included `database/migrate.php` script will **automatically create** the `johnwincellopez_schooldental` database for you! However, if you prefer creating it manually in **phpMyAdmin**, make sure to name it `johnwincellopez_schooldental`.
 
 1. **Create the Database and Tables:**  
    Open your browser and visit:  
@@ -164,6 +165,10 @@ Use these pre-seeded credentials to test both user roles immediately:
 2. Log in using `dentist@college.edu` / `password123`.
 3. Under **Manage Student Appointments**, update a student's status (e.g., change from `Pending` to `Confirmed` or `Completed`) and click **Save**.
 4. Use the **Create New Student Dental Record** form to log checkup details, diagnoses, treatments, and advice for students.
+
+## 📖 User Manual
+
+For complete student and dentist instructions, including appointment management, dental records, reports, activity history, and backup/restore, see the [School Dental Care User Manual](USER_MANUAL.md).
 
 ## 🔐 Security and Recovery
 
