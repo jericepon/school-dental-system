@@ -1,9 +1,9 @@
 <?php
 // database/migrate.php
 $host = getenv('DB_HOST') ?: 'localhost';
-$dbName = getenv('DB_NAME') ?: 'dental_care_db';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
+$dbName = getenv('DB_NAME') ?: 'johnwincellopez_schooldental';
+$username = getenv('DB_USER') ?: 'johnwincellopez_dentaluser';
+$password = getenv('DB_PASSWORD') ?: 'P@ssword@123';
 
 if (!preg_match('/\A[a-zA-Z0-9_]+\z/', $dbName)) {
     http_response_code(500);
@@ -14,8 +14,11 @@ try {
     $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Create Database
-    $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbName`");
+    $databaseCheck = $pdo->prepare('SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?');
+    $databaseCheck->execute([$dbName]);
+    if (!$databaseCheck->fetchColumn()) {
+        $pdo->exec("CREATE DATABASE `$dbName`");
+    }
     $pdo->exec("USE `$dbName`");
 
     // 1. Users Table (Students, Dentists/Staff)

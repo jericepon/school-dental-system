@@ -2,9 +2,9 @@
 // config/database.php
 
 $host = getenv('DB_HOST') ?: 'localhost';
-$db_name = getenv('DB_NAME') ?: 'dental_care_db';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
+$db_name = getenv('DB_NAME') ?: 'johnwincellopez_schooldental';
+$username = getenv('DB_USER') ?: 'johnwincellopez_dentaluser';
+$password = getenv('DB_PASSWORD') ?: 'P@ssword@123';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8mb4", $username, $password);
