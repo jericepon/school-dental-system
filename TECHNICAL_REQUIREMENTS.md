@@ -122,7 +122,7 @@ The database connection uses the `utf8mb4` character set. Database connection va
 
 - Use HTTPS for any non-local deployment and verify that the web server redirects HTTP to HTTPS.
 - Use a least-privilege database account and strong, environment-provided credentials.
-- Remove or restrict public access to `database/migrate.php` and `database/seed.php` after setup. The seed endpoint is explicitly restricted to loopback requests; the migration endpoint should still be removed or restricted in deployed environments.
+- Remove or restrict public access to `database/migrate.php` and `database/seed.php` after setup. Browser seeding requires a `SEED_TOKEN` with at least 32 characters, supplied through the PHP environment or `config/.env`; remove it or restrict the endpoint after setup. The migration endpoint should also be removed or restricted in deployed environments.
 - Disable sample accounts and change all sample passwords before any deployment beyond a local classroom environment.
 - Configure web-server access denial for `storage/backups` if the server is not Apache or IIS, and restrict filesystem permissions on the backup directory.
 - Keep backup copies in separate protected storage. A backup on the same host is not disaster recovery.

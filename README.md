@@ -129,9 +129,10 @@ Instead of importing `.sql` files manually in `phpMyAdmin`, use the built-in set
 2. **Load Sample Accounts & Records:**  
    Next, visit:  
    👉 `http://localhost/school-dental-system/database/seed.php`  
-   *Output:* You should see **"Dental Database Seeded Successfully!"**
+    Set a `SEED_TOKEN` of at least 32 characters in PHP's environment or in `config/.env` to enable browser seeding, then enter it on the page. Alternatively, run `database/seed.php` with PHP CLI.
+    *Output:* You should see **"Database seeding completed."**
 
-  The seed script is limited to local requests and does not erase existing data. The migration is safe to rerun to create newly added tables.
+  The seed script requires the configured token for browser requests and does not erase existing data. The migration is safe to rerun to create newly added tables.
 
 ---
 
